@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IconColor, IconSizes } from "./components/design-system/icon/icon.interface";
 export namespace Components {
+    interface HeaderComponent {
+    }
     interface TdnUiIcon {
         /**
           * Specifies the label to use for accessibility. Defaults to the icon name.
@@ -28,6 +30,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLHeaderComponentElement extends Components.HeaderComponent, HTMLStencilElement {
+    }
+    var HTMLHeaderComponentElement: {
+        prototype: HTMLHeaderComponentElement;
+        new (): HTMLHeaderComponentElement;
+    };
     interface HTMLTdnUiIconElement extends Components.TdnUiIcon, HTMLStencilElement {
     }
     var HTMLTdnUiIconElement: {
@@ -35,10 +43,13 @@ declare global {
         new (): HTMLTdnUiIconElement;
     };
     interface HTMLElementTagNameMap {
+        "header-component": HTMLHeaderComponentElement;
         "tdn-ui-icon": HTMLTdnUiIconElement;
     }
 }
 declare namespace LocalJSX {
+    interface HeaderComponent {
+    }
     interface TdnUiIcon {
         /**
           * Specifies the label to use for accessibility. Defaults to the icon name.
@@ -59,6 +70,7 @@ declare namespace LocalJSX {
         "size"?: IconSizes;
     }
     interface IntrinsicElements {
+        "header-component": HeaderComponent;
         "tdn-ui-icon": TdnUiIcon;
     }
 }
@@ -66,6 +78,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "header-component": LocalJSX.HeaderComponent & JSXBase.HTMLAttributes<HTMLHeaderComponentElement>;
             "tdn-ui-icon": LocalJSX.TdnUiIcon & JSXBase.HTMLAttributes<HTMLTdnUiIconElement>;
         }
     }
