@@ -1,0 +1,10 @@
+.top-bar {
+  background-color: rgba(var(--app-bg-color-secondary), 0.1);
+  border: 1px solid var(--app-border-color);
+  padding: 0 4px;
+}
+.home {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}

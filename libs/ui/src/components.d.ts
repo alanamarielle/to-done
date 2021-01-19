@@ -5,12 +5,16 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Todo } from "apps/web/src/app/interfaces/todo";
 import { IconColor, IconSizes } from "./components/design-system/icon/icon.interface";
 export namespace Components {
     interface HeaderComponent {
     }
     interface HelloComponent {
         "name": string;
+    }
+    interface TdnCard {
+        "todo": Todo;
     }
     interface TdnUiIcon {
         /**
@@ -45,6 +49,12 @@ declare global {
         prototype: HTMLHelloComponentElement;
         new (): HTMLHelloComponentElement;
     };
+    interface HTMLTdnCardElement extends Components.TdnCard, HTMLStencilElement {
+    }
+    var HTMLTdnCardElement: {
+        prototype: HTMLTdnCardElement;
+        new (): HTMLTdnCardElement;
+    };
     interface HTMLTdnUiIconElement extends Components.TdnUiIcon, HTMLStencilElement {
     }
     var HTMLTdnUiIconElement: {
@@ -54,6 +64,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "header-component": HTMLHeaderComponentElement;
         "hello-component": HTMLHelloComponentElement;
+        "tdn-card": HTMLTdnCardElement;
         "tdn-ui-icon": HTMLTdnUiIconElement;
     }
 }
@@ -62,6 +73,9 @@ declare namespace LocalJSX {
     }
     interface HelloComponent {
         "name"?: string;
+    }
+    interface TdnCard {
+        "todo"?: Todo;
     }
     interface TdnUiIcon {
         /**
@@ -85,6 +99,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "header-component": HeaderComponent;
         "hello-component": HelloComponent;
+        "tdn-card": TdnCard;
         "tdn-ui-icon": TdnUiIcon;
     }
 }
@@ -94,6 +109,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "header-component": LocalJSX.HeaderComponent & JSXBase.HTMLAttributes<HTMLHeaderComponentElement>;
             "hello-component": LocalJSX.HelloComponent & JSXBase.HTMLAttributes<HTMLHelloComponentElement>;
+            "tdn-card": LocalJSX.TdnCard & JSXBase.HTMLAttributes<HTMLTdnCardElement>;
             "tdn-ui-icon": LocalJSX.TdnUiIcon & JSXBase.HTMLAttributes<HTMLTdnUiIconElement>;
         }
     }

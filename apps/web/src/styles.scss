@@ -5,6 +5,12 @@
 
 @import './css/reset';
 
+html,
+body {
+  height: 100vh;
+  background-color: var(--app-bg-color-secondary);
+}
+
 a {
   color: var(--color-blue);
 }

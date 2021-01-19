@@ -1,7 +1,5 @@
 # loop-ui-icon
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -15,6 +13,19 @@
 | `name`      | `name`       | Specifies which icon to use from the built-in set of icons.                                 | `string`                                                                                                                                                                                                                                                                                   | `undefined` |
 | `size`      | `size`       | The size of the icon: xxs through xl                                                        | `"l" \| "m" \| "s" \| "xl" \| "xs"`                                                                                                                                                                                                                                                        | `undefined` |
 
+
+## Dependencies
+
+### Used by
+
+ - [header-component](../../header-component)
+
+### Graph
+```mermaid
+graph TD;
+  header-component --> tdn-ui-icon
+  style tdn-ui-icon fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
