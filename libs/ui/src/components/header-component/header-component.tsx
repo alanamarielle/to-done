@@ -1,3 +1,4 @@
+// import { Router } from '@angular/router';
 import { Component, Prop, h } from '@stencil/core';
 
 @Component({
@@ -13,10 +14,12 @@ export class HeaderComponent {
         <div class="home">
           <tdn-ui-icon name="logo" size="s" color="color-green"></tdn-ui-icon>
           <span>To Done</span>
-
-          {/* <a routerLink="/tasks">Tasks</a> */}
         </div>
+        <button>Add Task</button>
       </div>
     );
   }
+  btnClick = function () {
+    this.router.navigate(['/addtask']);
+  };
 }
